@@ -1,0 +1,64 @@
+/* Reset e Base */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
+
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%; position: fixed; top: 0; width: 100%; z-index: 1000; }
+.logo-text { font-size: 1.5rem; font-weight: 700; }
+.nav-menu ul { display: flex; list-style: none; background: rgba(20, 20, 20, 0.7); padding: 0.6rem 1.2rem; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+.nav-menu ul li a { text-decoration: none; color: #999; font-size: 0.85rem; padding: 0.5rem 1.2rem; transition: 0.3s; }
+.nav-menu ul li a.active, .nav-menu ul li a:hover { color: #fff; }
+.nav-menu ul li a.active { background: rgba(255, 255, 255, 0.1); border-radius: 50px; }
+.icon-btn { background: none; border: none; color: #fff; font-size: 1.1rem; cursor: pointer; margin-left: 1.5rem; }
+
+/* Hero */
+.hero { height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 8rem; position: relative; overflow: hidden; }
+.poster-grid { position: absolute; top: -10%; left: -5%; width: 110%; height: 120%; display: grid; grid-template-columns: repeat(10, 1fr); gap: 15px; opacity: 0.3; transform: rotate(-2deg); }
+.poster img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 12px; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, transparent 0%, #000 90%); z-index: 2; display: flex; justify-content: center; align-items: center; }
+.central-icon { font-size: 15rem; color: rgba(255,255,255,0.03); }
+.hero-content { position: relative; z-index: 3; text-align: center; max-width: 800px; padding: 0 20px; }
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+.hero-content p { color: #ccc; margin-bottom: 2.5rem; line-height: 1.6; }
+.cta-button { background: #007bff; color: #fff; border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; margin: 0 auto; transition: 0.3s; }
+.cta-button:hover { background: #0056b3; transform: translateY(-2px); }
+.cta-button.secondary { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); margin: 0; }
+
+/* Seções Gerais */
+section { padding: 5rem 5%; }
+.section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+.header-text h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+.header-text p { color: #999; font-size: 0.9rem; max-width: 600px; }
+
+/* Categorias */
+.carousel-controls { display: flex; align-items: center; gap: 1.5rem; background: rgba(255,255,255,0.05); padding: 0.8rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+.dot { width: 20px; height: 3px; background: #333; border-radius: 2px; }
+.dot.active { background: #007bff; }
+.category-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.category-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; transition: 0.3s; cursor: pointer; }
+.category-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.05); }
+.category-images { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px; }
+.category-images img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; opacity: 0.7; }
+.category-footer { display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+
+/* Dispositivos */
+.section-header-centered { margin-bottom: 4rem; }
+.device-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.device-card { background: linear-gradient(145deg, #141414 0%, #0a0a0a 100%); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 40px; transition: 0.3s; }
+.device-card:hover { border-color: #007bff; }
+.device-icon { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.device-icon i { font-size: 1.5rem; color: #007bff; background: rgba(0,123,255,0.1); padding: 12px; border-radius: 10px; }
+.device-card p { color: #888; font-size: 0.9rem; line-height: 1.6; }
+
+/* FAQ */
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.faq-item { display: flex; gap: 20px; padding: 25px; border-bottom: 1px solid #222; }
+.faq-number { background: #1a1a1a; padding: 10px 15px; border-radius: 8px; height: fit-content; font-weight: 700; color: #444; }
+.faq-item.active .faq-number { color: #fff; }
+.faq-question { font-weight: 600; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.faq-answer { color: #888; font-size: 0.9rem; line-height: 1.6; display: none; }
+.faq-item.active .faq-answer { display: block; }
+
+/* Responsivo */
+@media (max-width: 1024px) { .category-grid { grid-template-columns: repeat(3, 1fr); } .device-grid, .faq-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .nav-menu { display: none; } .hero-content h1 { font-size: 2.5rem; } .category-grid { grid-template-columns: repeat(2, 1fr); } }
